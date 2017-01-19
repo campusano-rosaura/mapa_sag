@@ -1,0 +1,43 @@
+body {
+    /*bottom: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;*/
+}
+
+#map {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: #088EBB;
+}
+
+svg {
+    width: 1020px;
+    height: 660px;
+    display: block;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0
+}
+
+.notification {
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}

@@ -1,0 +1,24 @@
+.land {
+    fill: #CCCCCC;
+    stroke: #555555;
+}
+
+path:hover {
+    fill: #AAAAAA;
+}
+
+path.active {
+    fill: #D1A965;
+}
+
+path.active.highlight {
+    fill: #49994A;
+}
+
+path.active.highlight:hover {
+    fill: #11C114;
+}
+
+path.active:hover {
+    fill: #FFCB73;
+}

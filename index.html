@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mercados</title>
+    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+    <link rel="stylesheet" href="svg.css" media="screen" title="no title">
+    <body>
+        <div id='app'>
+            <div class="columns">
+                <div class="column is-12">
+                    <div id="map"></div>
+                    <div class="notification">
+                        Rusia
+                    </div>
+                </div>
+            </div>
+            <transition name="fade">
+            <div class="modal is-active" v-show="modal_visible" style="display: none">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="content">
+                            <h3 class="is-h3" v-text="country"></h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Área</th>
+                                        <th>Producto</th>
+                                        <th>Tipo</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="product in products">
+                                        <td>{{ product.class }}</td>
+                                        <td>{{ product.name }}</td>
+                                        <!-- <td>{{ product.tipo }} <span v-show="product.tipo.includes('Apertura') & product.fecha.length > 0"> ({{ product.fecha }})</span></td> -->
+                                        <td>{{ product.tipo }} <span v-show="product.fecha.length > 0"> ({{ product.fecha }})</span></td>
+                                        <td>{{ product.status }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <button @click="modal_visible = false" class="modal-close"></button>
+            </div>
+            </transition>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.js"></script>
+    <script src="d3_simplify.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+</html>
